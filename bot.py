@@ -10,5 +10,6 @@ async def on_ready():
     print('起動しました！(\'◇\')ゞ')
 @bot.command()
 async ping(ctx):
+    await ctx.send('pong!')
 
 bot.run(TOKEN)
