@@ -8,7 +8,13 @@ class mcount(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self,message):
+        guild = message.guild   
+        member_count = guild.member_count  
+        user_count = sum(1 for member in guild.members if not member.bot)  
+        bot_count = sum(1 for member in guild.members if member.bot)  
+        category = discord.utils.get(guild.category, name='counter') 
+        
       
 
 def setup(bot):
-    bot.add_cog(ping(bot))
+    bot.add_cog(mcount(bot))
