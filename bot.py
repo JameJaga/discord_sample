@@ -1,11 +1,8 @@
 # coding: UTF-8
 import re
 import discord
-import random
 from discord.ext import commands
 import os
-import asyncio
-import asyncpg
 from yarl import URL
 import pandas as pd
 
