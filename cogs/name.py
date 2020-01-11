@@ -13,7 +13,7 @@ class ping(commands.Cog):
         name = guild.name
         name = re.split('-', name)[0]
         payload = f"{name} + {str(member_count)} members."
-        await guild.edit(payload) 
+        await guild.edit(name=payload) 
 
 def setup(bot):
     bot.add_cog(ping(bot))
