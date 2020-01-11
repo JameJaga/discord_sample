@@ -2,7 +2,7 @@ import discord
 import re
 from discord.ext import commands
 
-class ping(commands.Cog):
+class name(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
@@ -17,5 +17,5 @@ class ping(commands.Cog):
         await guild.edit(name=payload) 
 
 def setup(bot):
-    bot.add_cog(ping(bot))
+    bot.add_cog(name(bot))
 
