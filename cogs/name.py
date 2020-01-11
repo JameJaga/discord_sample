@@ -1,14 +1,19 @@
 import discord
 from discord.ext import commands
 
-class name(commands.Cog):
+class ping(commands.Cog):
 
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def ping(self, ctx):
-        await ctx.send('pong!')
+    @commands.Cog.listener
+    async def on_message(self, message):
+        guild = message.guild
+        member_count = guild.member_count  
+        name = guild.name
+        name = re.split('-', name)[0]
+        payload = f"{name} + {str(member_count)} members."
+        await guild.edit(payload) 
 
 def setup(bot):
-    bot.add_cog(name(bot))
+    bot.add_cog(ping(bot))
