@@ -1,4 +1,5 @@
 import discord
+import re
 from discord.ext import commands
 
 class ping(commands.Cog):
@@ -6,7 +7,7 @@ class ping(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.Cog.listener
+    @commands.Cog.listener()
     async def on_message(self, message):
         guild = message.guild
         member_count = guild.member_count  
@@ -17,3 +18,4 @@ class ping(commands.Cog):
 
 def setup(bot):
     bot.add_cog(ping(bot))
+
